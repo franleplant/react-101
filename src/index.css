@@ -24,6 +24,17 @@ body,
   border-radius: 5px;
 }
 
+.button {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #ccc;
+}
+
 .select {
   padding: 10px;
   border: 1px solid #ccc;
@@ -32,6 +43,10 @@ body,
 
 .flow > * + * {
   margin-top: 10px;
+}
+
+.inline-flow > * + * {
+  margin-left: 10px;
 }
 
 .margin_around {
