@@ -1,13 +1,90 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.flow > * + * {
+  margin-top: 10px;
+}
+
+.margin_around {
+  margin: 10px;
+}
+
+.example_selector__option {
+  padding: 10px;
+  background: #e3aaff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+.example_selector__option:focus {
+  outline: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.example_selector > :not(:first-child) {
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  border-left: 0px;
+}
+
+.example_selector > :not(:last-child) {
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.example_selector__option__selected {
+  background: white;
+}
+
+.progress-bar {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.1);
+  height: 20px;
+  position: relative;
+}
+
+.progress-bar__progress {
+  background: #e3aaff;
+  border-radius: 5px;
+  color: white;
+  height: 100%;
+}
+
+.progress-bar__number {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
 }
