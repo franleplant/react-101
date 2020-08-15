@@ -10,12 +10,12 @@ export default function LifeCycleContainer() {
   }
 
   function reRender() {
-    console.log("==========")
+    console.log("==========");
     setRenderId((id) => id + 1);
   }
 
   function changeUser() {
-    console.log("==========")
+    console.log("==========");
     setUserId((id) => id + 1);
   }
 
@@ -76,5 +76,5 @@ export function LifeCycle(props: IProps) {
       <p>{`renderId: ${renderId}`}</p>
       <p>{`userId: ${userId}`}</p>
     </div>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import useIsMounted from "./useIsMounted";
 
 export type Callback = () => any;
@@ -26,11 +26,16 @@ export function useSetTimeout(): (callback: Callback, ms: number) => void {
 
   useEffect(() => () => clearTimeout(id.current), []);
 
-  return (callback: Callback, ms: number) => {
-    id.current = setTimeout(() => {
-      if (isMounted.current) {
-        callback();
-      }
-    }, ms);
-  };
+  const customSetTimeout = useCallback(
+    (callback: Callback, ms: number) => {
+      id.current = setTimeout(() => {
+        if (isMounted.current) {
+          callback();
+        }
+      }, ms);
+    },
+    [isMounted]
+  );
+
+  return customSetTimeout;
 }

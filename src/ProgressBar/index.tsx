@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 
 import ProgressBar from "./ProgressBar";
 import useIsMounted from "../useIsMounted";
+import { useSetTimeout } from "../useTimeout";
 
 export default function ProgressBarContainer() {
   return (
@@ -65,6 +66,36 @@ function useUploadFile(): number {
     return () => {
       window.clearTimeout(timeoutId.current);
     };
+  }, [fakeProgressUpdate]);
+
+  return progress;
+}
+
+// A more abstracted version,
+// it uses useSetTimeout that internally uses
+// isMounted and does the cleanup automatically
+function useUploadFileV2(): number {
+  const [progress, setProgress] = useState(0);
+  const setTimeout = useSetTimeout();
+
+  const fakeProgressUpdate = useCallback(
+    () =>
+      setTimeout(() => {
+        setProgress((progress) => {
+          const nextProgress = progress + 10;
+          if (nextProgress < 100) {
+            fakeProgressUpdate();
+          }
+
+          return nextProgress;
+        });
+      }, Math.random() * 1000),
+    // never changes
+    [setTimeout]
+  );
+
+  useEffect(() => {
+    fakeProgressUpdate();
   }, [fakeProgressUpdate]);
 
   return progress;
