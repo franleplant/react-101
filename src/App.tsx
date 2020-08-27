@@ -4,16 +4,18 @@ import Counter from "./Counter";
 import ProgressBar from "./ProgressBar";
 import Clock from "./Clock";
 import LifeCycle from "./LifeCycle";
+import LifeCycleXtreme from "./LifeCycleXtreme";
 
 const OPTIONS = [
   { label: "Counter", Component: Counter },
   { label: "ProgressBar", Component: ProgressBar },
   { label: "Clock", Component: Clock },
   { label: "LifeCycle", Component: LifeCycle },
+  //{ label: "LifeCycleXtreme", Component: LifeCycleXtreme },
 ];
 
 export default function App() {
-  const [exampleId, setExampleId] = useState(3);
+  const [exampleId, setExampleId] = useState(0);
 
   const Example = OPTIONS[exampleId].Component;
 

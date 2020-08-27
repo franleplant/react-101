@@ -2,21 +2,29 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 
 import { useInterval } from "./useInterval";
 
-export default function Clock() {
-  const [date, setDate] = useState(new Date());
-  const isMounted = useRef(false);
-  const id = useRef<any>();
+export function Clock() {
+  const [date, setDate] = useState(() => new Date());
 
+  // Handle mounted state
+  const isMounted = useRef(false); // instance.ref0.current = false
   useEffect(() => {
     isMounted.current = true;
+
+    return () => {
+      isMounted.current = false;
+    }
+  }, [])
+
+  // Handle setInterval
+  const id = useRef<any>();
+  useEffect(() => {
     id.current = setInterval(() => {
       if (isMounted.current) {
         setDate(new Date());
       }
-    }, 500);
+    }, 1000);
 
     return () => {
-      isMounted.current = false;
       window.clearInterval(id.current);
     };
   }, []);
@@ -25,7 +33,7 @@ export default function Clock() {
 }
 
 // A more abstracted version
-export function ClockV2() {
+export default function ClockV2() {
   const [date, setDate] = useState(new Date());
   const update = useCallback(() => setDate(new Date()), []);
   useInterval(update, 1000);

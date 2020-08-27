@@ -24,6 +24,13 @@ body,
   border-radius: 5px;
 }
 
+.card {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 500px;
+}
+
 .button {
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.2);

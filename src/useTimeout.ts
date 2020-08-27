@@ -34,6 +34,7 @@ export function useSetTimeout(): (callback: Callback, ms: number) => void {
         }
       }, ms);
     },
+    //never changes
     [isMounted]
   );
 

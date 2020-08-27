@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function LifeCycleContainer() {
   const [renderId, setRenderId] = useState(0);
@@ -71,7 +71,7 @@ export function LifeCycle(props: IProps) {
   }, [userId]);
 
   return (
-    <div>
+    <div className="card">
       <h3>Life Cycle</h3>
       <p>{`renderId: ${renderId}`}</p>
       <p>{`userId: ${userId}`}</p>

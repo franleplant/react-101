@@ -44,8 +44,8 @@ export function FileUploader() {
 function useUploadFile(): number {
   const [progress, setProgress] = useState(0);
   const isMounted = useIsMounted();
-  const timeoutId = useRef<any>();
 
+  const timeoutId = useRef<any>();
   const fakeProgressUpdate = useCallback(() => {
     timeoutId.current = setTimeout(() => {
       if (isMounted.current) {
@@ -66,6 +66,7 @@ function useUploadFile(): number {
     return () => {
       window.clearTimeout(timeoutId.current);
     };
+    // eslint rules of hooks
   }, [fakeProgressUpdate]);
 
   return progress;
