@@ -12,8 +12,8 @@ export function Clock() {
 
     return () => {
       isMounted.current = false;
-    }
-  }, [])
+    };
+  }, []);
 
   // Handle setInterval
   const id = useRef<any>();

@@ -14,7 +14,7 @@ export default function CounterContainer() {
           Re-render
         </button>
       </div>
-      <Counter renderId={renderId} initialMoney={renderId * 100}/>
+      <Counter renderId={renderId} initialMoney={renderId * 100} />
     </div>
   );
 }

@@ -5,12 +5,14 @@ import ProgressBar from "./ProgressBar";
 import Clock from "./Clock";
 import LifeCycle from "./LifeCycle";
 import LifeCycleXtreme from "./LifeCycleXtreme";
+import ChildrenIf from "./ChildrenIf";
 
 const OPTIONS = [
   { label: "Counter", Component: Counter },
   { label: "ProgressBar", Component: ProgressBar },
   { label: "Clock", Component: Clock },
   { label: "LifeCycle", Component: LifeCycle },
+  { label: "ChildrenIf", Component: ChildrenIf },
   //{ label: "LifeCycleXtreme", Component: LifeCycleXtreme },
 ];
 
