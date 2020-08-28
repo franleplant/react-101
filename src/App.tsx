@@ -6,6 +6,7 @@ import Clock from "./Clock";
 import LifeCycle from "./LifeCycle";
 import LifeCycleXtreme from "./LifeCycleXtreme";
 import ChildrenIf from "./ChildrenIf";
+import ChildrenPatch from "./ChildrenPatch";
 
 const OPTIONS = [
   { label: "Counter", Component: Counter },
@@ -13,6 +14,7 @@ const OPTIONS = [
   { label: "Clock", Component: Clock },
   { label: "LifeCycle", Component: LifeCycle },
   { label: "ChildrenIf", Component: ChildrenIf },
+  { label: "ChildrenPatch", Component: ChildrenPatch },
   //{ label: "LifeCycleXtreme", Component: LifeCycleXtreme },
 ];
 
